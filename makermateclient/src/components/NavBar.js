@@ -8,7 +8,6 @@ const user = localStorage.getItem("user")
 const renderList = () =>{
   if(user){
     return[
-      <li key="home"><Link to="/">Home</Link></li>,
       <li key="profile"><Link to="/profile">Profile</Link></li>,
       <li key="timeline"><Link to="/timeline">Timeline</Link></li>,
       <li key="photos"><Link to="/photos">Photos</Link></li>,
