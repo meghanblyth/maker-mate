@@ -168,7 +168,7 @@ const makeComment = (note,postId) => {
             posts.map(post=>{
               return(
                 <div class="row">
-                  <div class="col s12 m6">
+                  <div class="col s12 m12">
                     <div class="card blue lighten-4">
                       <div class="card-content black-text">
                         <span class="card-title">
