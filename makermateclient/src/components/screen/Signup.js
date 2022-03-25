@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import M from 'materialize-css';
 
+
 //Signup is a component, inside is all the fuction we need during signup
 const Signup = () => {
   const navigation = useNavigate() 
@@ -55,55 +56,55 @@ const Signup = () => {
     
 
 
-  return (
-    <div>
-      <div className="container" 
-            style={{
-                margin: "30px auto",
-                maxWidth: "500px",
-                padding: "20px",
-                textAlign: "center"
-            }}>
-     <div className="mycard">
-       <div className="card auth-card input-field">
-       <h2>Maker Mate</h2>
-       <input
-       type="text"
-       placeholder="first name"
-       value={firstName}
-       onChange={(e)=>setFirstName(e.target.value)}
-       />
-       <input
-       type="text"
-       placeholder="last name"
-       value={lastName}
-       onChange={(e)=>setLastName(e.target.value)}
-       />
-       <input
-       type="text"
-       placeholder="email"
-       value={email}
-       onChange={(e)=>setEmail(e.target.value)}
-       />
-       <input
-       type="password"
-       placeholder="password"
-       value={password}
-       onChange={(e)=>setPassword(e.target.value)}
-       />
-       <button className="btn waves-effect waves-light #1976d2 blue darken-2"
-       onClick={()=>postdata()}
-       >
-       Sign Up
-        </button>
-        <h5>
-          <Link to="/signin">Already have an account?</Link>
-        </h5>
-       </div>
-      </div>
-      </div>
-   </div>
-  )
-}
-
+    return (
+      <div className="background-image">
+        <div className="container" 
+              style={{
+                  opacity: "0.9",
+                  maxWidth: "500px",
+                  paddingTop: "110px",
+                  paddingBottom: "110px",
+                  textAlign: "center"
+              }}>
+       <div className="mycard">
+         <div className="card auth-card input-field">
+         <h2>Maker Mate</h2>
+         <input
+         type="text"
+         placeholder="first name"
+         value={firstName}
+         onChange={(e)=>setFirstName(e.target.value)}
+         />
+         <input
+         type="text"
+         placeholder="last name"
+         value={lastName}
+         onChange={(e)=>setLastName(e.target.value)}
+         />
+         <input
+         type="text"
+         placeholder="email"
+         value={email}
+         onChange={(e)=>setEmail(e.target.value)}
+         />
+         <input
+         type="password"
+         placeholder="password"
+         value={password}
+         onChange={(e)=>setPassword(e.target.value)}
+         />
+         <button className="btn waves-effect waves-light #1976d2 blue darken-2"
+         onClick={()=>postdata()}
+         >
+         Sign Up
+          </button>
+          <h5>
+            <Link to="/signin">Already have an account?</Link>
+          </h5>
+         </div>
+        </div>
+        </div>
+     </div>
+    )
+  }
 export default Signup

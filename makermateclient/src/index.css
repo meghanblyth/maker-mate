@@ -24,6 +24,14 @@ padding:3%;
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
+
+.background-image{
+  width: '100vw';
+  height: '100vh';
+  background-image: url('https://t4.ftcdn.net/jpg/03/21/89/37/360_F_321893740_vIrKnY5dYwFbpMM9gVf9u5Cjepz8YamK.jpg');
+  background-size: cover; 
+
 .material-icons{
   padding: 10px;
   cursor: pointer;
@@ -39,4 +47,5 @@ padding:3%;
   max-width: 700px;
   padding: 20px;
   text-align: center;
+
 }
