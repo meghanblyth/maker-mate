@@ -85,7 +85,7 @@ const makeComment = (note,postId) => {
     })
   }).then(res=>res.json())
     .then(result=>{
-    setPosts([result,...posts])
+    setPosts(result.posts)
     console.log({message: 'successful comment'})
     }).catch(err=>{
       console.log(err)
