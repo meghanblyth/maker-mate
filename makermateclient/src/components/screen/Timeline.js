@@ -70,6 +70,7 @@ const Timeline = () => {
   .then(result =>{
       setPosts([result,...posts])
       console.log('Posted Sucessfully')
+      setInput('')
   })
 }
   
