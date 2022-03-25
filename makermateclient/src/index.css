@@ -11,15 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.profile-pic-and-name{
-  display:inline-block;
-}
 .profile-pic{
   border-radius: 50%;
-}
-.comment-text-area{
-  max-width: 400px;
 }
 
 .individual-photo{

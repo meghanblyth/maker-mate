@@ -125,7 +125,7 @@ const makeComment = (note,postId) => {
  
   return (
     <div>
-      <div className="container" 
+  <div className="container" 
           style={{
             margin: "30px auto",
             maxWidth: "500px",
@@ -133,7 +133,7 @@ const makeComment = (note,postId) => {
             textAlign: "center"
             }}>
           <h4>New Post</h4>
-         <div className="row">
+          <div className="row">
           <form className="col s12">
             <div className="row">
               <div className="input-field col s12">
@@ -151,65 +151,88 @@ const makeComment = (note,postId) => {
             onClick={()=>postData()} >
             Post Your Post
           </button>
-      </div>
-      </div>
-    <div>
-    <div className="container" 
+          </div>
+    </div>
+
+
+      
+
+      <div className="container" 
           style={{
             margin: "10px auto",
             maxWidth: "1000px",
             padding: "20px",
             textAlign: "center"
             }}>
-      {posts.map(post=>{
-        return(
-          <div key={post.createdAt}>
-              <h3>{post.message}</h3>
-              <div style={{maxWidth :'500px', display:'inline-flex', justifyContent: 'space-evenly'}} className="profile-pic-and-name">
-                <img className='profile-pic' style={{maxWidth:'8%'}} src={post.userImage}  alt="it goes here"/>
-                <p>{post.user}</p>
-                <Moment format="YYYY/MM/DD"><p>{post.createdAt}</p></Moment>
-              </div >
-              <form className='comment-text-area' onSubmit={(e)=>{
-                      e.preventDefault();
-                      if(e.target[0].value !== ""){
-                        makeComment(e.target[0].value, post._id);
-                        e.target[0].value = ""
-                      }
-                    }}>
-                <input type="text" placeholder="add a comment"/>
-              </form>
-
-            {authorAuth(post) &&
-                  <i className="material-icons" onClick={()=>deleteData(post._id)}>delete</i>}
-              <h6>likes: {post.likes.length} </h6>
-              {
-              post.likes.includes(JSON.parse(user)._id)
-              ?
-              <i className="material-icons" 
-              onClick={()=>{dislikePost(post._id)}}>thumb_down</i>
-                :
-              <i className="material-icons"
-                  onClick={()=>{likePost(post._id)}}
-              >thumb_up</i>
-              }
-                <div>
-                  {post.comments.map(comment=>{
-                    return(
-                      <div key={comment.createdAt}>
-                        <h6>{comment.note}</h6>
-                        <h6>{comment.user}</h6>
-                        <img className='profile-pic' style={{maxWidth:'3%'}} src= {comment.userImage} alt="it goes here"/>
-                      </div>)
-                    })}
+          {
+            posts.map(post=>{
+              return(
+                <div class="row">
+                  <div class="col s12 m6">
+                    <div class="card blue lighten-4">
+                      <div class="card-content black-text">
+                        <span class="card-title">
+                        <div style={{maxWidth :'500px', display:'inline-flex', justifyContent: 'space-evenly', border:'1px solid black'}} className="profile-pic-and-name">
+                        <img className='profile-pic' style={{maxWidth:'8%'}} src={post.userImage}  alt="it goes here"/>
+                        <p>{post.user}</p>
+                        <Moment format="YYYY/MM/DD"><p>{post.createdAt}</p></Moment>
+                        </div >
+                        </span>
+                        <p> <h3>{post.message}</h3></p>
+                      </div>
+                      <div class="card-action">
+                        <div className="like-delete-buttons" style={{maxWidth :'500px', display:'inline-flex', justifyContent: 'space-evenly'}}>
+                        <div>
+                        {authorAuth(post) &&
+                              <i className="material-icons" onClick={()=>deleteData(post._id)}>delete</i>}
+                        </div>
+                        <div><h6>likes: {post.likes.length} </h6></div>
+                        <div>
+                          {
+                          post.likes.includes(JSON.parse(user)._id)
+                          ?
+                          <i className="material-icons" 
+                          onClick={()=>{dislikePost(post._id)}}>thumb_down</i>
+                            :
+                          <i className="material-icons"
+                              onClick={()=>{likePost(post._id)}}
+                          >thumb_up</i>
+                          }
+                        </div>
+                    </div>
+                      </div>
+                      <div>
+                      <form className='comment-text-area' onSubmit={(e)=>{
+                              e.preventDefault();
+                              if(e.target[0].value !== ""){
+                                makeComment(e.target[0].value, post._id);
+                                e.target[0].value = ""
+                              }
+                            }}>
+                        <input type="text" placeholder="add a comment"/>
+                      </form>
+                      </div>
+                      <div>
+                          {post.comments.map(comment=>{
+                            return(
+                              <div style={{maxWidth :'500px', display:'inline-flex', justifyContent: 'space-evenly'}} key={comment.createdAt}>
+                                <img className='profile-pic' style={{maxWidth:'6%'}} src= {comment.userImage} alt="it goes here"/>
+                                <h6>{comment.user}</h6>
+                                <h6>{comment.note}</h6>
+                              </div>)
+                            })}
+                        </div>
+                    </div>
+                  </div>
                 </div>
-          </div>
-        )
-      })
-    }
-  </div>
-  </div>
-  </div>
+              )
+            })
+          }
+      </div>
+    </div>
+  
+      
+
 
 )}
 
