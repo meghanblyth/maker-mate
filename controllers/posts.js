@@ -51,8 +51,7 @@ const PostsController = {
       if (err) {
         throw err;
       }
-    }).then(comment => {
-      res.json(comment)
+      res.status(201).redirect('/posts');
     })
   },
 
