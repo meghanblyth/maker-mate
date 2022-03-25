@@ -11,15 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.profile-pic-and-name{
-  display:inline-block;
-}
 .profile-pic{
   border-radius: 50%;
-}
-.comment-text-area{
-  max-width: 400px;
 }
 
 .individual-photo{
@@ -30,4 +23,20 @@ padding:3%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+.material-icons{
+  padding: 10px;
+  cursor: pointer;
+}
+.photo-buttons {
+  margin: 10px auto;
+  max-width: 500px;
+  padding: 20px;
+  text-align: center
+}
+.upload-box{
+  margin: 10px auto;
+  max-width: 700px;
+  padding: 20px;
+  text-align: center;
 }
