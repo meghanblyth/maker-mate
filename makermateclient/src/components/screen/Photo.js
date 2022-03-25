@@ -21,18 +21,22 @@ return(
 
   <div>
       <div className='upload-box'>
+        <div>
         <form action="/photos" encType="multipart/form-data" method="post">
-            <label style={{fontSize:'1.3em'}}htmlFor="myImage">Add some holiday snaps</label>
-            <input className="btn waves-effect waves-light" type="file" name="myImage" />
-            <input className="btn waves-effect waves-light" type="submit" value="Upload Photo" />
+            <label style={{fontSize:'1.3em', color:'black', padding: '10px'}}htmlFor="myImage">Add some holiday snaps</label>
+            <input className="btn waves-effect waves-light #1976d2 blue darken-1" style={{ margin: '10px'}}type="file" name="myImage" />
+            <input className="btn waves-effect waves-light #1976d2 blue darken-1" type="submit" value="Upload Photo" />
         </form>
+        </div>
         <br></br>
         <br></br>
+        <div>
         <form action="/photos/profilepic" encType="multipart/form-data" method="post">
-            <label style={{fontSize:'1.3em'}} htmlFor="myImage">Add profile pic</label>
-            <input className="btn waves-effect waves-light" type="file" name="myImage" />
-            <input className="btn waves-effect waves-light" type="submit" value="Upload Photo" />
+            <label style={{fontSize:'1.3em', color:'black', padding: '10px'}} htmlFor="myImage">Add profile pic</label>
+            <input className="btn waves-effect waves-light #1976d2 blue darken-1" style={{ margin: '10px'}} type="file" name="myImage" />
+            <input className="btn waves-effect waves-light #1976d2 blue darken-1" type="submit" value="Upload Photo" />
         </form>
+        </div>
       </div>
     {
       data.map(post=>{

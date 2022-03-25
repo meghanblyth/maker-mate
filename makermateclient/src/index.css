@@ -31,7 +31,7 @@ padding:3%;
   height: '100vh';
   background-image: url('https://t4.ftcdn.net/jpg/03/21/89/37/360_F_321893740_vIrKnY5dYwFbpMM9gVf9u5Cjepz8YamK.jpg');
   background-size: cover; 
-
+}
 .material-icons{
   padding: 10px;
   cursor: pointer;
@@ -44,7 +44,7 @@ padding:3%;
 }
 .upload-box{
   margin: 10px auto;
-  max-width: 700px;
+  max-width: 1000px;
   padding: 20px;
   text-align: center;
 

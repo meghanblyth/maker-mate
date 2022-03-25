@@ -72,10 +72,10 @@ hb.registerHelper('dateFormat', function (date) {
 
 // route setup
 app.use("/", homeRouter);
-app.use("/posts", sessionChecker, postsRouter);
+app.use("/posts", postsRouter);
 app.use("/sessions", sessionsRouter);
 app.use("/users", usersRouter);
-app.use("/photos", sessionChecker, photosRouter);
+app.use("/photos", photosRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
